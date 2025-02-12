@@ -39,7 +39,7 @@ h2 {
     margin-top: 15px;
     font-size: 1.5em;
     font-style: italic;
-    border-bottom: 3px solid rgb(255, 247, 14);
+    border-bottom: 3px solid rgb(255, 223, 14);
     padding-bottom: 10px;
     letter-spacing: 1px;
 }
@@ -59,17 +59,24 @@ h2 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 10px;
     padding: 20px;
     margin-top: 50px;
 }
-
+.icon{
+    margin-bottom: -4px;
+    font-size: 25px!important;
+    position: relative;
+    top:15px;
+    left: 3px;
+    z-index:99;
+}
 .hostage-card {
     background: rgba(255, 255, 255, 0.2);
     /* border: 2px solid rgb(255, 223, 14);; */
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    width: 250px;
+    width: 200px;
     padding: 15px;
     text-align: center;
     transition: transform 0.3s;
@@ -90,8 +97,15 @@ h2 {
 
 .hostage-card h3 {
     margin: 10px 0;
+    font-size: 25px;
 }
-
+.hear{
+    color: white;
+    font-size: 18px!important;
+}
+.hear:hover{
+    text-decoration: underline;
+}
 /* Fullscreen Modal */
 .modal {
     display: none;
@@ -123,7 +137,7 @@ h2 {
 }
 
 .close-btn:hover {
-    color: rgb(255, 247, 14);
+    color: rgb(255, 223, 14);
 }
 
 .modal {
@@ -170,6 +184,7 @@ h2 {
 .modal audio {
     margin-top: 15px;
     width: 40%;
+    /* background-color:  rgb(255, 223, 14); */
 }
 
 .modal a {
@@ -184,16 +199,16 @@ h2 {
     font-size: 20px;
     padding: 13px 17px;
     border: none;
-    border-right: 3px rgb(255, 247, 14) solid;
-    border-bottom: 3px rgb(255, 247, 14) solid;
+    border-right: 3px rgb(255, 223, 14) solid;
+    border-bottom: 3px rgb(255, 223, 14) solid;
 }
 .modal a button:hover{
     background-color: rgb(172, 169, 169);
     color: white;
 }
 .modal a button:active{
-    border-right: 8px rgb(255, 247, 14) solid;
-    border-bottom: 8px rgb(255, 247, 14) solid; 
+    border-right: 8px rgb(255, 223, 14) solid;
+    border-bottom: 8px rgb(255, 223, 14) solid; 
 }
 #modalText {
     white-space: pre-line;
@@ -205,7 +220,7 @@ h2 {
 }
 .footer {
     background-color: #000000;
-    border-top: rgb(255, 247, 14) solid 3px;
+    border-top: rgb(255, 223, 14) solid 3px;
     color: white;
     padding: 20px;
     text-align: center;
@@ -222,7 +237,7 @@ h2 {
 }
 
 .footer-link {
-    color: rgb(255, 247, 14);
+    color: rgb(255, 223, 14);
     text-decoration: none;
     font-weight: bold;
 }
