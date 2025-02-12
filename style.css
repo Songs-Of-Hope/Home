@@ -65,6 +65,8 @@ h2 {
 
 .hostage-card {
     background: rgba(255, 255, 255, 0.8);
+    /* background: rgba(251, 248, 229, 0.8); */
+    border: 2px solid rgba(245, 230, 133, 0.8);
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     width: 250px;
