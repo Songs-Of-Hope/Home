@@ -1,9 +1,19 @@
+/* tempp */
+#notExist{
+font-size: 25px;
+color: red;
+font-weight: bold;
+background-color: rgb(249, 246, 224);
+margin: 10px;
+margin-bottom: 50px;
+}
+
 body {
     font-family: 'Amatic SC', sans-serif;
     background: url('./img/back2.png') no-repeat center center/cover;
     text-align: center;
     /* color: #fff; */
-    color: rgb(255, 239, 14);
+    color: rgb(255, 223, 14);;
     margin: 0;
     padding: 0;
 }
@@ -26,7 +36,7 @@ body {
 }
 
 h1 {
-    color: rgb(255, 239, 14);
+    color: rgb(255, 223, 14);;
     margin: 0;
     font-size: 3em;
     font-weight: bold;
@@ -55,7 +65,7 @@ h2 {
 }
 
 
-.hostages-container {
+#hostages-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -90,9 +100,9 @@ h2 {
 .hostage-card img {
     width: 100%;
     border-radius: 10px;
-    /* filter: grayscale(100%) brightness(1.1); */
     border: 2px solid rgb(255, 223, 14);
-
+    max-height: 180px;
+    width: 180px;
 }
 
 .hostage-card h3 {
@@ -102,6 +112,7 @@ h2 {
 .hear{
     color: white;
     font-size: 18px!important;
+    margin-right: 10px;
 }
 .hear:hover{
     text-decoration: underline;
