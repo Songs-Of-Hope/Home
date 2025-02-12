@@ -117,7 +117,7 @@ function openDetails(name, text, audioSrc, imageSrc) {
     text = text.replace(/__OPEN__/g, '[').replace(/__CLOSE__/g, ']');
     document.getElementById('modalTitle').innerText = name;
     document.getElementById('modalText').innerHTML = text.replace(/\n/g, '<br>');
-    if (audioSrc == '***') {
+    if (audioSrc === '***') {
         document.getElementById('modalAudio').style.display = 'none';
         document.getElementById('notExist').innerHTML='השיר לא נכתב עדיין בmp3. אולי את/ה תתנדב/י ליצור אותו?'
     
@@ -143,6 +143,10 @@ function openDetails(name, text, audioSrc, imageSrc) {
     document.getElementById('detailsModal').style.display = 'block';
 }
 function closeModal() {
+    document.getElementById('modalAudio').style.display = 'block';
+    document.getElementById('detailsModal').style.float = 'right';
+    document.getElementById('notExist').innerHTML=''
+
     document.getElementById('detailsModal').style.display = 'none';
     document.getElementById('modalAudio').pause();
     document.getElementById('modalAudio').currentTime = 0;
