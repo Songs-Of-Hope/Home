@@ -2,7 +2,8 @@ body {
     font-family: 'Amatic SC', sans-serif;
     background: url('./img/back2.png') no-repeat center center/cover;
     text-align: center;
-    color: #fff;
+    /* color: #fff; */
+    color: rgb(255, 239, 14);
     margin: 0;
     padding: 0;
 }
@@ -25,7 +26,7 @@ body {
 }
 
 h1 {
-    color: #fff;
+    color: rgb(255, 239, 14);
     margin: 0;
     font-size: 3em;
     font-weight: bold;
@@ -64,8 +65,8 @@ h2 {
 }
 
 .hostage-card {
-    background: rgba(255, 255, 255, 0.8);
-    border: 2px solid rgba(245, 230, 133, 0.8);
+    background: rgba(255, 255, 255, 0.2);
+    /* border: 2px solid rgb(255, 223, 14);; */
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     width: 250px;
@@ -82,13 +83,13 @@ h2 {
 .hostage-card img {
     width: 100%;
     border-radius: 10px;
-    filter: grayscale(100%) brightness(1.1);
+    /* filter: grayscale(100%) brightness(1.1); */
+    border: 2px solid rgb(255, 223, 14);
 
 }
 
 .hostage-card h3 {
     margin: 10px 0;
-    color: #4b4a10;
 }
 
 /* Fullscreen Modal */
