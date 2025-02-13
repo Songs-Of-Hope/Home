@@ -14,7 +14,7 @@
 <body>
     <header class="main-header">
         <div class="header-content">
-            <img src="./img/logo2.png" height="90px" width="110px" alt=""
+            <img src="./img/logo2.png" id="logo" height="90px" width="110px" alt=""
                 style="position: absolute;top: 0px;left: 50px;">
 
             <h1 dir="rtl">איתכם בלב ובשיר</h1>
@@ -29,7 +29,7 @@
 
     <!-- Updated Modal -->
     <div class="modal" id="detailsModal">
-        <button onclick="closeModal()" class="close-btn">×</button>
+        <button onclick="closeModal()" class="close-btn">↪</button>
         <div class="modal-content">
             <img id="modalImage" src="" alt="">
             <h1 id="modalTitle"></h1>
@@ -39,11 +39,13 @@
             <audio id="modalAudio" controls></audio>
             <br>
             <a id="downloadBtn" href="#" download>
-                <button dir="rtl">הורד כעת <i class="fas fa-download"></i>
+                <button class="btn" dir="rtl">הורד כעת <i class="fas fa-download"></i>
                 </button>
             </a>
             <p id="modalText"></p>
-
+            <button  id="btn" >
+                <i class="fas fa-copy" id="copy"></i> 
+            </button>
         </div>
         <footer class="footer">
             <div class="footer-content">
@@ -57,7 +59,7 @@
             </div>
         </footer>
     </div>
-
+    <!-- The footer -->
     <footer class="footer">
         <div class="footer-content">
             <p dir="rtl">© 2025 שירים לחטופים-שע"י הקהילה prog.co.il</p>
