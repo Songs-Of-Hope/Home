@@ -256,10 +256,10 @@ h2 {
     /* background-color:  rgb(255, 223, 14); */
 }
 
-audio::-webkit-media-controls-panel {
-    /* background-color: rgb(213, 213, 212); */
-    /* background-color: #000000; */
-}
+/* audio::-webkit-media-controls-panel {
+    background-color: rgb(213, 213, 212);
+    background-color: #000000;
+} */
 /* 
 audio::-webkit-media-controls-time-remaining-display {
     color: rgb(242, 222, 87);
@@ -325,12 +325,12 @@ audio::-webkit-media-controls-timeline {
     /* float: right; */
     position: relative;
     bottom: 20vh;
-    right: 0;
+    right: -35vw;
     font-size: 25px;
     background-color: transparent;
     border: none;
     color: rgb(255, 223, 14);
-
+     font-family: 'Amatic SC', sans-serif;
 }
 
 #copy:hover {

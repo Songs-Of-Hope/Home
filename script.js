@@ -180,6 +180,14 @@ function copySong() {
     const textToCopy = document.getElementById('modalText').innerText;
     navigator.clipboard.writeText(textToCopy)
         .then(() => {
+            const btn = document.getElementById("btn");
+            const originalText = btn.innerHTML;
+            btn.innerHTML = "!!הועתק בהצלחה";
+        
+            setTimeout(() => {
+                btn.innerHTML = originalText;
+            }, 2000);
+            // document.getElementById("btn").innerHTML+=""
             // alert("מילות השיר הועתקו בהצלחה!");
         })
         .catch(err => {
