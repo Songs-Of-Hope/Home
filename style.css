@@ -178,7 +178,7 @@ h2 {
     /* background: linear-gradient(135deg, gold, lightgreen); */
     background: linear-gradient(135deg, rgba(255, 223, 14, 0.5), rgba(128, 128, 128, 0.613));
     border: 2px dotted white;
-    /* box-shadow: 0 0 15px limegreen; */
+    /* box-shadow: 0 0 15px rgba(255, 223, 14, 0.655); */
     animation: fadeIn 1s ease-in-out;
 }
 
@@ -193,7 +193,9 @@ h2 {
     /* color: darkgreen; */
     margin-top: 5px;
 }
-
+.returned{
+    color: rgb(255, 223, 14);
+}
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -261,7 +263,12 @@ h2 {
     margin-bottom: 20px;
     box-shadow: 15px 15px 55px white;
 }
-
+.returnImg{
+    /* width: 100%; */
+    /* max-width: 500px; */
+    box-shadow:  0 0 55px rgb(255, 223, 14)!important;
+    border: rgb(255, 223, 14) 3px solid;
+}
 /* Modal Text */
 .modal h3 {
     color: white;
