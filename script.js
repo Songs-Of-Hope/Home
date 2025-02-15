@@ -190,9 +190,9 @@ window.onload = () => {
         if (hostage.returned) {
             let returnedText = document.createElement("p");
             returnedText.className = "returned-text";
-            returnedText.textContent = "🎉 חזר הביתה בשלום!";
+            returnedText.textContent = " חזר אלינו הביתה!";
             if (hostage.returned && hostage.returned2 === false)
-                returnedText.textContent = "🎉 יאיר חזר הביתה בשלום!";
+                returnedText.textContent = "יאיר חזר אלינו הביתה!";
             returnedText.dir = "rtl";
             mainDiv.appendChild(returnedText);
         }
@@ -208,11 +208,26 @@ function openDetails(hostage) {
     document.getElementById("modalImage").src = hostage.imageLink
     document.getElementById('modalTitle').innerText = hostage.hostageName;
     document.getElementById('description').innerText = hostage.description;
-    if (hostage.returned==true)
-        {
-            document.getElementById('description').innerText += `\n💛 חזר בתאריך ${hostage.returnDate}💛`
-            document.getElementById("modalImage").className+='returnImg'
+    if (hostage.returned == true && hostage.returned2 == false) {
+        var parts = hostage.hostageName.split(" ");
+        if (parts.length > 1) {
+            // var lastName = parts[1];
+            var lastName = parts[1].substring(1);
+            // return firstName + " " + newLastName;
+            console.log(lastName);
+            document.getElementById('description').innerText += `\n 💛${lastName}   חזר בתאריך ${hostage.returnDate}💛`
+            document.getElementById("modalImage").className += 'returnImg'
+        document.getElementById('modalTitle').innerText = hostage.hostageName + " , "+lastName+" חזר הביתה";
+
         }
+
+    }
+    else if (hostage.returned == true) {
+        document.getElementById('description').innerText += `\n💛 חזר בתאריך ${hostage.returnDate}💛`
+        document.getElementById("modalImage").className += 'returnImg'
+        document.getElementById('modalTitle').innerText = hostage.hostageName + ", חזר הביתה";
+
+    }
     document.getElementById('btn').onclick = () => {
         copySong(text)
     };
@@ -224,8 +239,9 @@ function openDetails(hostage) {
     }
     else
         document.getElementById('modalAudio').src = hostage.audioLink;
-    if (hostage.returned)
-        document.getElementById('modalTitle').innerText = hostage.hostageName + ", חזר הביתה";
+    
+    // if (hostage.returned)
+    //     document.getElementById('modalTitle').innerText = hostage.hostageName + ", חזר הביתה";
 
     var downloadBtn = document.getElementById('downloadBtn');
     downloadBtn.addEventListener('click', function () {
