@@ -228,9 +228,9 @@ h2 {
 
 /* Close Button (X) */
 .close-btn {
-    position: absolute;
-    top: 2vh;
-    right: 5vw;
+    position: fixed;
+    top: 30vh;
+    right: 2vw;
     font-size: 30px;
     color: #333;
     background: none;
