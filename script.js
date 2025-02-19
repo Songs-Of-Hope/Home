@@ -215,7 +215,7 @@ const hostages = [
     },
     {
         hostageName: 'אלקנה בוחבוט',
-        description: '',
+        description: 'אלקנה בוחבוט, בן 35, תושב מבשרת ציון, נחטף ב-7 באוקטובר 2024 במהלך מסיבת נובה ברעים, שבה היה חלק מצוות ההפקה. במהלך המתקפה, הוא סייע בטיפול ובפינוי הפצועים, ובשלב מאוחר יותר נלקח בשבי. אלקנה נשוי לרבקה, ולשניים ילד בן 4. הוא סובל מאסתמה, ומוחזק במנהרה בעומק של כ-30 מטר מתחת לאדמה, בתנאים קשים הכוללים טחב המכביד על נשימתו. למרות זאת, הוא שומר על שגרה יהודית בשבי, כולל קידוש בשישי וצום ביום כיפור. בנוסף, הוא ביקש להעביר לאשתו ולבנו את השיר "לוחמת" של אייל גולן, כדי שישמעו אותו בכל יום. ',
         lyrics: `
 בִּמְקוֹם לְהַצִּיל אֶת עַצְמוֹ
 הוּא נִשְׁאַר לְסַיֵּעַ לַאֲחֵרִים
@@ -233,6 +233,33 @@ const hostages = [
 אֶת הַתִּקְוָה לֹא מְאַבְּדִים`,
         audioLink: './audio/elkana.mp3',
         imageLink: './img/elkana.jpg',
+        returned: false,
+        returnDate: null
+    },
+    {
+        hostageName: 'אביתר דוד',
+        description: 'אביתר דוד, בן 23, תושב כפר סבא, נחטף ב-7 באוקטובר 2024 במהלך מסיבת נובה ברעים, שבה היה עם חבריו גיא גלבוע-דלאל, רון צרפתי ז"ל ועידן הרמתי ז"ל, שנרצחו במתקפה. לאחר המתקפה, אביתר וגיא נלקחו בשבי. אביתר הוא אדם רגיש, בעל יכולת הקשבה ותובנות עמוקות, עם נטייה לעזור לחבריו בתקופות קשות. הוא אוהב לנגן בגיטרה, עוסק במשחקי מחשב, התעמלות קרקע ומכשירים, ועקשן מאוד כאשר הוא מחליט על מטרה. ',
+        lyrics: `אֶבְיָתָר הוּא אוֹר נֶחְבָּא
+כְּשֶׁזְּקוּקִים תָּמִיד הוּא בָּא
+עִם לֵב גָּדוֹל וּנְשָׁמָה
+נֶחְטַף לְמִנְהֲרוֹת אֲדָמָה
+
+הוּא נִלְקַח עִם חָבֵר
+עִם גַּיְא דָּלָאל
+וּשְׁנֵיהֶם אוּלַי בְּיַחַד
+נִמְצָאִים בְּלֵב הַפַּחַד
+
+לְאֶבְיָתָר יֵשׁ מַנְגִּינָה
+יֵשׁ חַיִּים שֶׁל נְתִינָה
+הוּא אוֹהֵב וְהוּא אָהוּב
+מִתְפַּלְּלִים שֶׁהוּא יָשׁוּב
+
+וְעוֹד יַגִּיעַ יוֹם
+הוּא יַגִּיעַ הַיּוֹם
+שֶׁבַּקָּשׁוֹת יִשָּׁמְעוּ בַּמָּרוֹם
+וְתָשׁוּבוּ הַבַּיְתָה בְּשָׁלוֹם.`,
+        audioLink: '***',
+        imageLink: './img/evyatar.jpg',
         returned: false,
         returnDate: null
     },
@@ -305,7 +332,7 @@ function openDetails(hostage) {
             // var lastName = parts[1];
             var lastName = parts[1].substring(1);
             // return firstName + " " + newLastName;
-            console.log(lastName);
+            // console.log(lastName);
             document.getElementById('description').innerText += `\n 💛${lastName}   חזר בתאריך ${hostage.returnDate}💛`
             document.getElementById("modalImage").className += 'returnImg'
             document.getElementById('modalTitle').innerText = hostage.hostageName + " , " + lastName + " חזר הביתה";
