@@ -311,7 +311,7 @@ window.onload = () => {
         if (hostage.died) {
             let diedText = document.createElement("p");
             diedText.className = "died-text";
-            diedText.textContent = "זכרם בליבנו לנצח 🕯️";
+            diedText.textContent = "השם יקום דמם 🕯️";
             diedText.dir = "rtl";
             mainDiv.appendChild(diedText);
         }
