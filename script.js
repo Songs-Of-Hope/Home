@@ -76,8 +76,9 @@ const hostages = [
         lyrics: `אֹהַד אָהוּד עַל כֻּלָּם\nמָלֵא בְּכָרִיזְמָה , אַבָּא מֻשְׁלָם\nשׂוֹחֶה, מְטַיֵּל וְרָץ\nלְכֻלָּם מְסַיֵּעַ, פָּעִיל וְנִמְרָץ\n\nבְּאוֹתוֹ בֹּקֶר שָׁחֹר\nהִתְנַהַגְתָּ כְּגִבּוֹר\nלֹא חָשַׁבְתָּ עַל עַצְמְךָ\nעָשִׂיתָ הַכֹּל לְהַצִּיל אֶת הַמִּשְׁפָּחָה\n\nאֲנַחְנוּ כָּאן, לִבֵּנוּ אִתְּךָ,\nמְחַכִּים לָרֶגַע שֶׁתָּשׁוּב אֶל בֵּיתְךָ.\nמִתְפַּלְּלִים וְהַלֵּב מָלֵא תִּקְוָה\nשֶׁתָּשׁוּב לְחַיִּים שֶׁל שַׁלְוָה`,
         audioLink: './audio/ohad.mp3',
         imageLink: './img/ohad.jpg',
-        returned: false,
-        returnDate: null
+        returned: true,
+        returnDate: '27/02/2025',
+        died: true
 
     },
     {
@@ -311,7 +312,11 @@ window.onload = () => {
         if (hostage.died) {
             let diedText = document.createElement("p");
             diedText.className = "died-text";
-            diedText.textContent = "השם יקום דמם 🕯️";
+            if (hostage.returned2)
+                diedText.textContent = "השם יקום דמם 🕯️";
+            else
+                diedText.textContent = "השם יקום דמו 🕯️";
+
             diedText.dir = "rtl";
             mainDiv.appendChild(diedText);
         }
@@ -343,7 +348,9 @@ function openDetails(hostage) {
             var lastName = parts[1].substring(1);
             // return firstName + " " + newLastName;
             // console.log(lastName);
-            if (hostage.died)
+            if (hostage.returned2!=true&&hostage.died)
+                document.getElementById('description').innerText += `\n 💔${lastName}   הוחזר בתאריך ${hostage.returnDate}💔`
+            else if (hostage.died)
                 document.getElementById('description').innerText += `\n 💔${lastName}   הוחזרו בתאריך ${hostage.returnDate}💔`
             else
                 document.getElementById('description').innerText += `\n 💛${lastName}   חזר בתאריך ${hostage.returnDate}💛`
@@ -355,7 +362,7 @@ function openDetails(hostage) {
     }
     else if (hostage.returned == true) {
         document.getElementById("modalImage").className += 'returnImg'
-        if (hostage.died) {
+        if (hostage.died) {            
             const messages = [
                 hostage.hostageName + ", הלב שבור 💔",
                 hostage.hostageName + ", חסרים לנו כל כך 😢",
@@ -367,7 +374,11 @@ function openDetails(hostage) {
                 hostage.hostageName + ", כל כך קשה להאמין 💔"
             ];
             document.getElementById('modalTitle').innerText = messages[Math.floor(Math.random() * messages.length)];
-            document.getElementById('description').innerText += `\n 💔${hostage.hostageName}   הוחזרו בתאריך ${hostage.returnDate}💔`
+            if(!hostage.returned2)
+            document.getElementById('description').innerText += `\n 💔${hostage.hostageName}   הוחזר בתאריך ${hostage.returnDate}💔`
+        else
+        document.getElementById('description').innerText += `\n 💔${hostage.hostageName}   הוחזרו בתאריך ${hostage.returnDate}💔`
+
         }
         else {
             document.getElementById('description').innerText += `\n💛 חזר בתאריך ${hostage.returnDate}💛`
