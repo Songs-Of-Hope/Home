@@ -95,13 +95,6 @@ function openDetails() {
 }
 function closeModal() {
     window.location.href = "./index.html";
-
-    // document.getElementById('modalAudio').style.opacity = '1';
-    // document.getElementById("modalImage").classList.remove("returnImg");
-    // document.getElementById('notExist').innerHTML = ''
-    // document.getElementById('detailsModal').style.display = 'none';
-    // document.getElementById('modalAudio').pause();
-    // document.getElementById('modalAudio').currentTime = 0;
 }
 
 
@@ -113,7 +106,7 @@ async function likeOrDis(objId) {
     });
     const data = await response.json();
 
-    console.log(data);
+    // console.log(data);
     document.getElementById('count').innerHTML = `${data.doc.likesCount} אנשים אהבו`
     localStorage.setItem('hos', JSON.stringify(data.doc))
     // let message=
@@ -146,7 +139,7 @@ function copySong() {
 
 async function send(tag) {
     let sended = JSON.parse(localStorage.getItem(`hos${hostage._id}`))
-    console.log(sended);
+    // console.log(sended);
 
     if (!sended || sended.id != hostage._id) {
         // console.log('sended._id->'+sended.id,' hostage._id->',hostage._id);
@@ -160,7 +153,7 @@ async function send(tag) {
     }
 
     else {
-        console.log('sended==', sended.tag);
+        // console.log('sended==', sended.tag);
         let index = hostage.tags.indexOf(sended.tag)
         if (index >= 0) {
             hostage.tags[index] = tag
@@ -173,7 +166,7 @@ async function send(tag) {
         }
         else
             return
-        console.log(' כבר הגבת');
+        // console.log(' כבר הגבת');
     }
     const response = await fetch(`${basicUrl}/api/documents/edit/${hostage._id}`, {
         method: 'PUT',
@@ -181,7 +174,7 @@ async function send(tag) {
         body: JSON.stringify(hostage.tags)
     });
     const data = await response.json();
-    console.log(data);
+    // console.log(data);
     localStorage.setItem('hos', JSON.stringify(data))
 
 

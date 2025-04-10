@@ -211,6 +211,9 @@ Loneliness, darkness, sadness, thirst, guilt, fear, pain, hunger, worry, slavery
         showDetails: false
     },
 ];
+function closeModal() {
+    window.location.href = "./index.html";
+}
 
 // const container = document.getElementById("songsContainer");
 // container.className = "modal-content"

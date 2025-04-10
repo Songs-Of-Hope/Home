@@ -93,6 +93,10 @@ function displayDocuments(){
         container.appendChild(mainDiv);
     });
 }
+
+function closeModal() {
+    window.location.href = "./index.html";
+}
 function openDetails(hostage) {
     localStorage.setItem('hos',JSON.stringify(hostage))
     window.location.href="./details.html";
