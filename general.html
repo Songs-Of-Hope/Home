@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<header class="main-header">
+    <div class="header-content">
+        <img src="./img/logo2.png" id="logo" height="90px" width="110px" alt=""
+            style="position: absolute;top: -15px;right: 20px;" onclick="closeModal()">
+
+        <h1 dir="rtl">איתכם בלב ובשיר</h1>
+        <!-- <h2 dir="rtl">פרויקט ייחודי של שירים שנכתבו מהלב ונוצרו בבינה מלאכותית, המוקדשים לכל אחד ואחת מהחטופים – כל שיר מספר
+            סיפור.
+        </h2> -->
+        <h2 dir="rtl">
+            פרויקט ייחודי של שירים שנכתבו מהלב ונוצרו בבינה מלאכותית, המוקדשים לכל אחד ואחת מהחטופים  – לעורר את המודעות ולחזק את תפילותינו לשובם של החטופים
+        </h2>
+        
+        <a href="./index.html"  class="btn">לדף הבית</a>
+    </div>
+</header>
+<head>
+    <style>
+         .song h2 {
+            margin-top: 0;
+            color: white;
+            /* text-decoration: underline; */
+            text-shadow: 3px 3px 5px black;
+            border: none;
+            font-size: 30px;
+            text-align: right;
+            text-decoration: none;
+            cursor: pointer;
+            background-color: #0000003f;
+            border-radius: 25px;
+            padding: 15px;
+        }
+        audio {
+            width: 80%;
+            margin: 10px 0;
+        }
+        .song {
+            background-color: #ffffff6d;
+            border-radius: 12px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 30px auto;
+            max-width:500px ;
+        }
+        .lyrics {
+            white-space: pre-wrap;
+            font-size: 1.1em;
+            color: #000000;
+            /* background-color: #f9f9f9; */
+            padding: 15px;
+            border-radius: 8px;
+            line-height: 1.8;
+            margin-bottom: -150px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>שירים כלליים שנכתבו למען החטופים</h1>
+    <div id="songsContainer"></div>
+</body>
+<script src="./general.js"></script>
+</html>
