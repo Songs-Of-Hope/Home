@@ -117,7 +117,7 @@ const songs = [
         showDetails: false
     },
     {
-        title: 'ילדים הם לא משחק/ @אוראל סולטן',
+        title: 'טביעת הישימון @אוראל סולטן',
         audioSrc: 'songs/imtashalu.mp3',
         lyrics: `מילים מתנפצות על החול
 חרוטות בדם
