@@ -597,3 +597,9 @@ audio::-webkit-media-controls-timeline {
     opacity: 0.9;
     transform: scale(0.8);
 }
+.notBu{
+    color: rgb(231, 71, 71)!important;
+    font-size: 50px;
+    background-color: white;
+   box-shadow:5px 5px 5px #00000045;
+}
