@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>שירים של תקווה | משימה יומית</title>
+    <link rel="icon" type="image/jpg" href="./img/logo2.png" />
+
+</head>
+<link rel="stylesheet" href="daily.css">
+<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+<header class="main-header">
+    <div class="header-content">
+        <img src="./img/logo2.png" id="logo" height="90px" width="110px" alt=""
+            style="position: absolute;top: -15px;right: 20px;" onclick="closeModal()">
+        <div id="wrapBell" onclick="dailyTask()">
+            <div id="bell" dir="rtl" style="float: left;">🕭 </div>
+            <div id="dailyTask" dir="rtl">עוד לא לקחת את המשימה היומית!</div>
+        </div>
+        <h1 dir="rtl">איתכם בלב ושיר</h1>
+        <h2 dir="rtl">
+            פרוייקט ייחודי של שירים שנכתבו מהלב ונוצרו בבינה מלאכותית המוקדשים לכל אחד ואחת מהחטופים, לעורר את המודעות
+            ולחזק את תפילותינו לשובם במהרה.
+
+        </h2>
+    </div>
+    <h3 style="color: red;font-size: 25px;">האתר באמצע שדרוג- לכל באג/ רעיון נשמח שתפנו ל
+        <a style="color: rgb(255, 223, 14);"
+            href="https://www.prog.co.il/threads/%D7%A4%D7%A8%D7%95%D7%99%D7%99%D7%A7%D7%98-%D7%94%D7%A7%D7%93%D7%A9%D7%95%D7%AA-%D7%A9%D7%99%D7%A8%D7%99%D7%9D-%D7%9C%D7%97%D7%98%D7%95%D7%A4%D7%99%D7%9D-%D7%A9%D7%9C%D7%A0%D7%95%F0%9F%92%97.1038837/">אשכול
+            היעודי בפרוג</a> והשאירו את תגובתכם
+    </h3>
+    <div class="navbar" dir="rtl">
+        <a href="index.html">דף הבית</a>
+        <a href="good.html">מעשים טובים</a>
+        <a href="daily.html">משימה יומית </a>
+        <a href="general.html">שירים כלליים </a>
+
+    </div>
+</header>
+
+<body dir="rtl">
+    <div dir="rtl">
+        <div class="daily-task-container" dir="rtl">
+            <h2 class="daily-title" dir="rtl" id="daily-title">פינת המשימה היומית </h2>
+
+            <div class="daily-mission-intro" dir="rtl">
+                <!-- <h2> מעשה יומי קטן – עבור מי שעדיין מחכים לשוב</h2> -->
+                <p>
+                    בכל יום, אנחנו בוחרים לעשות מעשה אחד של אור – תפילה, חיוך, כוונה או התחזקות –
+                    עבור אחינו ואחיותינו שעדיין מוחזקים בשבי.
+                    <br>
+                    היום יש <strong>55</strong> חטופים שעדיין לא חזרו הביתה.
+                    <br>
+                    זה גם היעד שלנו: <strong>55 מעשים טובים</strong> – אחד לכל נשמה אהובה שזקוקה לנו עכשיו יותר מתמיד.
+                    <br>
+                    הצטרפו אל המשימה היומית, ותנו ללב לפעול. יחד אנחנו אומרים: לא שוכחים. לא נחים. מחזירים את כולם
+                    הביתה.
+                </p>
+            </div>
+            <p id="taskText" class="daily-text">טוען משימה...</p>
+
+            <h3>הדרך ליעד:</h3>
+            <div class="progress-bar-container">
+                <div id="progressBar" class="progress-bar"></div>
+            </div>
+            <p id="progressText" class="progress-label" dir="rtl">0 מתוך 55 השלימו היום 🙌</p>
+            <button id="markDoneBtn" onclick="markTaskDone()" dir="rtl">ביצעתי!</button>
+            <br>
+            <div id="celebrationMessage" class="celebration-message hidden" dir="rtl">
+                🎉 היעד היומי הושג! איזה כיף לראות את האחדות הזו 💛
+                <br />רוצה גם את להוסיף מצווה של אהבת חינם? אפשר להמשיך ללחוץ!
+            </div>
+            <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+            <br>
+            <div style="border: 1px rgb(255, 223, 14) dashed; padding: 20px;">
+                <h2>סטטוס המשימות של החודש האחרון</h2>
+                <div class="calender"></div>
+                <p id="successStats" class="success-stats">ימים שהגענו ליעד: 0</p>
+            </div>
+
+        </div>
+    </div>
+</body>
+<footer class="footer">
+    <div class="footer-content">
+        <p dir="rtl">© 2025 שירים לחטופים-שע"י הקהילה prog.co.il</p>
+        <p dir="rtl">אנחנו לא שוכחים אתכם לרגע❤️</p>
+        <p dir="rtl">ליצירת קשר:
+            <a href="mailto:songsforthem2025@gmail.com" class="footer-link">songsforthem2025@gmail.com</a> 
+            <!-- | -->
+            <!-- <a href="tel:0552222222" class="footer-link">055-2222222</a> |
+            <a href="https://wa.me/0552222222" target="_blank" class="footer-link">WhatsApp</a> -->
+        </p>
+
+    </div>
+</footer>
+<script src="./daily.js"></script>
+<!-- <script src="./script.js"></script> -->
+
+
+</html>

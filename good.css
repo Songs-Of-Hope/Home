@@ -1,0 +1,174 @@
+body {
+    margin: 0;
+    /* font-family: 'Assistant', sans-serif; */
+    /* background: linear-gradient(to bottom right, black, rgb(255, 223, 14)); */
+    color: white;
+    padding: 0;
+  }
+
+  #header {
+    text-align: center;
+          /* font-family: 'Assistant', sans-serif; */
+font-size: 25px;
+    padding: 50px 20px 20px;
+    background: rgba(0, 0, 0, 0.6);
+    animation: fadeInDown 2s ease;
+  }
+
+  #header h1 {
+    font-size: 2.5em;
+    color: rgb(255, 223, 14);
+    margin-bottom: 20px;
+  }
+
+  #header p {
+    font-size: 1.2em;
+    line-height: 1.8;
+    color: white;
+    max-width: 800px;
+    margin: 0 auto;
+    animation: fadeInUp 3s ease;
+  }
+
+  .deeds-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 40px 20px;
+  }
+
+  .deed-card {
+    background-color: #1a1a1a;
+    border: 2px solid rgb(255, 223, 14);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .deed-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(255, 223, 14, 0.6);
+  }
+
+  .deed-card img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+  }
+
+  .deed-card button {
+    background-color: rgb(255, 223, 14);
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .deed-card button:hover {
+    background-color: #ffcc00;
+  }
+
+  .total-count {
+    text-align: center;
+    font-size: 3em;
+    padding-bottom: 30px;
+    color: rgb(255, 223, 14);
+    background-color: rgb(17, 17, 17);
+    
+  }
+
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  #successMessage {
+position: fixed;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%) scale(0.7);
+background: rgb(255, 223, 14);
+color: black;
+font-size: 1.8em;
+padding: 20px 30px;
+border-radius: 20px;
+/* box-shadow: 0 0 20px rgba(255, 223, 14, 0.9); */
+box-shadow: 0 0 2000px rgba(255, 255, 255, 1);
+border: 2px dashed black;
+z-index: 999;
+opacity: 0;
+transition: opacity 0.3s ease, transform 0.3s ease;
+text-align: center;
+font-weight: bold;
+}
+
+#successMessage.show {
+opacity: 1;
+transform: translate(-50%, -50%) scale(1);
+}
+
+.hidden {
+display: none;
+}
+
+.hostage-display {
+    text-align: center;
+    margin-top: 3rem;
+    animation: fadeIn 2s ease-in-out;
+  }
+  
+  #hostageImage {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid rgb(255, 223, 14);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    animation: pulse 5s infinite;
+  }
+  
+  #hostageName {
+    font-size: 1.4rem;
+    margin-top: 1rem;
+    font-weight: bold;
+    color: #000;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.07);
+    }
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  

@@ -1,18 +1,35 @@
-let hostages=[]
+
+let hostages = []
+let hostagesNow = []
+let died = []
+let returned = []
+
 // const basicUrl = "http://localhost:3000";
 const basicUrl = "https://hostagesserver.onrender.com";
 
-currentHos=null
+currentHos = null
 // let likesCount = getLikesCount()
 window.onload = () => {
-   getHostages()
+    getHostages()
+    console.log('loaded');
 }
-async function getHostages(){
+async function getHostages() {
     try {
+        let container = document.getElementById("hostages-container");
+        container.innerHTML = `<h1 dir="rtl">טוען את הרשימה...</h1>`
         const response = await fetch(`${basicUrl}/api/documents/all`);
+        container.innerHTML = ''
         hostages = await response.json();
-
-        displayDocuments(hostages);
+        localStorage.setItem('hostages', JSON.stringify(hostages))
+        returned = hostages.filter(doc => doc.died != true && doc.returned == true)
+        localStorage.setItem('returned', JSON.stringify(returned))
+        died = hostages.filter(doc => doc.died == true)
+        localStorage.setItem('died', JSON.stringify(died))
+        hostagesNow = hostages.filter(item => !returned.includes(item) && !died.includes(item));
+        localStorage.setItem('hostagesNow', JSON.stringify(hostagesNow))
+        displayDocuments(hostagesNow);
+        displayDocuments(returned);
+        displayDocuments(died);
     } catch (error) {
         if (!hostages) {
             console.log('error on get documents');
@@ -20,9 +37,22 @@ async function getHostages(){
         }
     }
 }
-function displayDocuments(){
-    let container = document.getElementById("hostages-container");
 
+// async function getExistHostages() {
+//     try {
+//         const response = await fetch(`${basicUrl}/api/documents/exist`);
+//         existHostages = await response.json();
+//         localStorage.setItem('existHostages',JSON.stringify(existHostages))
+//         displayDocuments(existHostages);
+//     } catch (error) {
+//         if (!existHostages) {
+//             console.log('error on get documents');
+
+//         }
+//     }
+// }
+function displayDocuments(hostages) {
+    let container = document.getElementById("hostages-container");
     // let hostages = getHostages();
     hostages.forEach(hostage => {
         let mainDiv = document.createElement("div");
@@ -98,6 +128,40 @@ function closeModal() {
     window.location.href = "./index.html";
 }
 function openDetails(hostage) {
-    localStorage.setItem('hos',JSON.stringify(hostage))
-    window.location.href="./details.html";
+    localStorage.setItem('hos', JSON.stringify(hostage))
+    window.location.href = "./details.html";
 }
+function dailyTask() {
+    window.location.href = "daily.html#daily-title";
+}
+function checkdailyTask() {
+    let daily = localStorage.getItem('taskCompleted');
+    const today = new Date().toISOString().split('T')[0];
+
+    let tooltipText ='עדיין לא ביצעת את המשימה היומית';
+
+  
+
+    // const dayElement = document.createElement('div');
+    // dayElement.className = `calendar-day ${isShabbat ? 'shabbat' : isCompleted ? 'completed' : 'missed'} ${isToday ? 'today' : ''}`;
+    // dayElement.setAttribute('data-tooltip', tooltipText);
+
+    if (daily == null || daily !== today) {
+        document.getElementById("bell").style.opacity = "1"
+        bell.classList.add("glow-animation");
+            // tooltipText = ;
+        // document.getElementById("dailyTask").style.animation="glow 1s infinite;"
+    }
+    else if (daily == today&&today!=null) {
+        bell.classList.remove("glow-animation");
+        tooltipText = 'שבת שלום!';
+
+        // document.getElementById("bell").style.opacity = "0"
+        // document.getElementById("dailyTask").innerHTML='השלמת את המשימה היומית'
+    }
+    daily.setAttribute('data-tooltip', tooltipText);
+
+
+
+}
+checkdailyTask()

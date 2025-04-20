@@ -12,29 +12,49 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 <body>
+    <!-- <a href="./good.html" class="btn" dir="rtl"> מעשה טוב </a> -->
+
     <header class="main-header">
         <div class="header-content">
             <img src="./img/logo2.png" id="logo" height="90px" width="110px" alt=""
                 style="position: absolute;top: -15px;right: 20px;" onclick="closeModal()">
-
-            <h1 dir="rtl">איתכם בלב ובשיר</h1>
+            <div id="wrapBell"  onclick="dailyTask()">
+                <div id="bell" dir="rtl" style="float: left;">🕭 </div>
+                <!-- <div id="dailyTask" dir="rtl">עוד לא לקחת את המשימה היומית!</div> -->
+            </div>
+            <h1 dir="rtl">איתכם בלב ושיר</h1>
             <!-- <h2 dir="rtl">פרויקט ייחודי של שירים שנכתבו מהלב ונוצרו בבינה מלאכותית, המוקדשים לכל אחד ואחת מהחטופים – כל שיר מספר
                 סיפור.
             </h2>
              -->
             <h2 dir="rtl">
-                פרויקט ייחודי של שירים שנכתבו מהלב ונוצרו בבינה מלאכותית, המוקדשים לכל אחד ואחת מהחטופים – לעורר את
-                המודעות ולחזק את תפילותינו לשובם של החטופים
+                פרוייקט ייחודי של שירים שנכתבו מהלב ונוצרו בבינה מלאכותית המוקדשים לכל אחד ואחת מהחטופים, לעורר את
+                המודעות ולחזק את תפילותינו לשובם במהרה.
+
             </h2>
         </div>
-        <h3 style="color: red;font-size: 25px;">האתר באמצע שדרוג- לכל באג/ רעיון נשמח שתפנו ל 
-            <a style="color: rgb(255, 223, 14);" href="https://www.prog.co.il/threads/%D7%A4%D7%A8%D7%95%D7%99%D7%99%D7%A7%D7%98-%D7%94%D7%A7%D7%93%D7%A9%D7%95%D7%AA-%D7%A9%D7%99%D7%A8%D7%99%D7%9D-%D7%9C%D7%97%D7%98%D7%95%D7%A4%D7%99%D7%9D-%D7%A9%D7%9C%D7%A0%D7%95%F0%9F%92%97.1038837/">אשכול היעודי בפרוג</a> והשאירו את תגובתכם
+        <h3 style="color: red;font-size: 25px;">האתר באמצע שדרוג- לכל באג/ רעיון נשמח שתפנו ל
+            <a style="color: rgb(255, 223, 14);"
+                href="https://www.prog.co.il/threads/%D7%A4%D7%A8%D7%95%D7%99%D7%99%D7%A7%D7%98-%D7%94%D7%A7%D7%93%D7%A9%D7%95%D7%AA-%D7%A9%D7%99%D7%A8%D7%99%D7%9D-%D7%9C%D7%97%D7%98%D7%95%D7%A4%D7%99%D7%9D-%D7%A9%D7%9C%D7%A0%D7%95%F0%9F%92%97.1038837/">אשכול
+                היעודי בפרוג</a> והשאירו את תגובתכם
         </h3>
+        <div class="navbar" dir="rtl">
+            <a href="index.html">דף הבית</a>
+            <a href="good.html">מעשים טובים</a>
+            <a href="daily.html" > משימה יומית </a>
+            <a href="general.html">שירים כלליים </a>
+
+            <!-- <a href="daily.html">משימה יומית </a> -->
+
+        </div>
     </header>
+
+
     <!-- Container of all hostages -->
     <div id="hostages-container">
     </div>
-    <a href="./general.html" class="btn" dir="rtl">לתוכן נוסף» </a>
+    <!-- <a href="./general.html" class="btn" dir="rtl">לתוכן נוסף» </a> -->
+
 
     <!-- The footer -->
     <footer class="footer">
@@ -42,12 +62,32 @@
             <p dir="rtl">© 2025 שירים לחטופים-שע"י הקהילה prog.co.il</p>
             <p dir="rtl">אנחנו לא שוכחים אתכם לרגע❤️</p>
             <p dir="rtl">ליצירת קשר:
-                <a href="mailto:hostages@gmail.com" class="footer-link">hostages@gmail.com</a> |
-                <a href="tel:0552222222" class="footer-link">055-2222222</a> |
-                <a href="https://wa.me/0552222222" target="_blank" class="footer-link">WhatsApp</a>
+                <a href="mailto:songsforthem2025@gmail.com" class="footer-link">songsforthem2025@gmail.com</a>
+                 <!-- | -->
+                <!-- <a href="tel:0552222222" class="footer-link">055-2222222</a> |
+                <a href="https://wa.me/0552222222" target="_blank" class="footer-link">WhatsApp</a> -->
             </p>
+
         </div>
     </footer>
+    <!-- <div id="bthn" lang="he" style="scale: 0.82;"></div>
+    <script>
+        (function () {
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.src = "https://bringthemhomenow.net/1.3.0/hostages-ticker.js";
+            script.setAttribute(
+                "integrity",
+                "sha384-MmP7bD5QEJWvJccg9c0lDnn3LjjqQWDiRCxRV+NU8hij15icuwb29Jfw1TqJwuSv"
+            );
+            script.setAttribute("crossorigin", "anonymous");
+            document.getElementsByTagName("head")[0].appendChild(script);
+        })();
+    </script> -->
+<!-- CDN של Tippy.js -->
+<link rel="stylesheet" href="https://unpkg.com/tippy.js@6/dist/tippy.css" />
+<script src="https://unpkg.com/@popperjs/core@2"></script>
+<script src="https://unpkg.com/tippy.js@6"></script>
 
     <script src="./script.js"></script>
 </body>

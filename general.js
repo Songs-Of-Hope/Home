@@ -1,6 +1,8 @@
+
+
 const songs = [
     {
-        title: 'רק שתחזרו/ @מהללו'
+        title: 'Bring Them Back Home / @מהללו'
         , audioSrc: './audio/zz_gen1.mp3',
         lyrics: `
 בית 1
@@ -273,3 +275,26 @@ function renderSongList() {
 
 // קריאה לפונקציה כדי להציג את הרשימה
 renderSongList();
+function dailyTask() {
+    window.location.href = "daily.html#daily-title";
+}
+function checkdailyTask() {
+    let daily = localStorage.getItem('taskCompleted');
+    const today = new Date().toISOString().split('T')[0];
+    if (daily == null || daily !== today) {
+        document.getElementById("bell").style.opacity = "1"
+        bell.classList.add("glow-animation");
+
+        // document.getElementById("dailyTask").style.animation="glow 1s infinite;"
+    }
+    else if (daily == today&&today!=null) {
+        bell.classList.remove("glow-animation");
+
+        // document.getElementById("bell").style.opacity = "0"
+        document.getElementById("dailyTask").innerHTML='השלמת את המשימה היומית'
+    }
+
+
+
+}
+checkdailyTask()
