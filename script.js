@@ -138,26 +138,20 @@ function checkdailyTask() {
     let daily = localStorage.getItem('taskCompleted');
     const today = new Date().toISOString().split('T')[0];
 
-    let tooltipText ='עדיין לא ביצעת את המשימה היומית';
 
   
-
-    // const dayElement = document.createElement('div');
-    // dayElement.className = `calendar-day ${isShabbat ? 'shabbat' : isCompleted ? 'completed' : 'missed'} ${isToday ? 'today' : ''}`;
-    // dayElement.setAttribute('data-tooltip', tooltipText);
+let bell= document.getElementById('bell')
 
     if (daily == null || daily !== today) {
         document.getElementById("bell").style.opacity = "1"
         bell.classList.add("glow-animation");
-            // tooltipText = ;
         // document.getElementById("dailyTask").style.animation="glow 1s infinite;"
     }
     else if (daily == today&&today!=null) {
         bell.classList.remove("glow-animation");
-        tooltipText = 'שבת שלום!';
 
         // document.getElementById("bell").style.opacity = "0"
-        // document.getElementById("dailyTask").innerHTML='השלמת את המשימה היומית'
+        document.getElementById("dailyTask").innerHTML='השלמת את המשימה היומית'
     }
     daily.setAttribute('data-tooltip', tooltipText);
 

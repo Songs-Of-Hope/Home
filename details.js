@@ -7,8 +7,8 @@ window.onload = () => {
 }
 
 function acceptDisclaimer() {
-  localStorage.setItem("disclaimerAccepted", "true");
-  popup.style.display = "none";
+    localStorage.setItem("disclaimerAccepted", "true");
+    popup.style.display = "none";
 }
 function closeDisclaimer() {
     localStorage.setItem("disclaimerAccepted", "true");
@@ -22,6 +22,11 @@ function openDetails() {
     document.getElementById("modalImage").src = hostage.imageLink
     document.getElementById('modalTitle').innerText = hostage.hostageName;
     document.getElementById('likedArea').innerHTML += `<div><i class="fas fa-thumbs-up"  id="liked" onclick="likeOrDis(${hostage._id})"></i></div><div id="count">${hostage.likesCount} אנשים אהבו</div>`;
+    if (hostage.nameForPray)
+        if (hostage.returned2 === false || hostage.returned2 == true)
+            document.getElementById('nameForPray').innerHTML += `"התפללו לשובם של: ${hostage.nameForPray}"`
+        else
+            document.getElementById('nameForPray').innerHTML += `התפללו לשובו של: "${hostage.nameForPray}"`
 
     document.getElementById('description').innerText = hostage.description;
     document.getElementById("mailto").href = `mailto:?subject=הי, רציתי לשתף אותך באתר שגיליתי- הקדשת שיר לכל חטוף?body=${encodeURIComponent('אתר להעלאת המודעות לחטופים ע"י כתיבת שירים וביצועם \n https://songs-of-hope.github.io/Home/ \n האתר כולו נבנה ע"י קהילת prog.co.il , כולל כתיבת השירים וביצועם ')}`
@@ -66,7 +71,7 @@ function openDetails() {
         }
 
     }
-        if (hostage.audioLink === '***') {
+    if (hostage.audioLink === '***') {
         document.getElementById('modalAudio').style.opacity = '0';
         document.getElementById('notExist').innerHTML = 'השיר לא נוצר עדיין בmp3. אולי את/ה תתנדב/י ליצור אותו?'
 
@@ -100,7 +105,7 @@ function renderComments() {
     const sanitizedSong = DOMPurify.sanitize(text).replace(/\n/g, '<br>');
     const commentsHtml = hostage.comments?.map(comment => {
         console.log(comment.createdAt);
-        
+
         const time = new Date(comment.createdAt).toLocaleString();
         const cleanComment = DOMPurify.sanitize(comment.text);
         return `
@@ -117,27 +122,27 @@ function renderComments() {
         <button class="response" onclick="submitComment(${hostage._id})">שלח תגובה</button>
       </div>
     `;
-    
+
     const fullHtml = `
       <div class="song-text">${sanitizedSong}</div>
-      <div class="comment-section"><h3 style="margin-bottom:-50px">כאן אפשר להשאיר לב❤️:<div style="font-size:15px">שימו לב, כולם רואים את ההודעות של כולם</div></h3>${commentFormHtml}${commentsHtml ||'<p>אין תגובות עדיין, היה הראשון להגיב.</p>'}</div>
+      <div class="comment-section"><h3 style="margin-bottom:-50px">כאן אפשר להשאיר לב❤️:<div style="font-size:15px">שימו לב, כולם רואים את ההודעות של כולם</div></h3>${commentFormHtml}${commentsHtml || '<p>אין תגובות עדיין, היה הראשון להגיב.</p>'}</div>
     `;
 
     modalTextElement.innerHTML = fullHtml;
     const textarea = document.getElementById('commentInput');
-const popup = document.getElementById('legal-disclaimer-popup');
+    const popup = document.getElementById('legal-disclaimer-popup');
 
-textarea.addEventListener('focus', () => {
+    textarea.addEventListener('focus', () => {
 
-      const popup = document.getElementById("legal-disclaimer-popup");
-    const accepted = localStorage.getItem("disclaimerAccepted");
-  
-    if (!accepted && popup) {
-      setTimeout(() => {
-        popup.style.display = "flex";
-      }, 1000); // 3 שניות
-    }
-});
+        const popup = document.getElementById("legal-disclaimer-popup");
+        const accepted = localStorage.getItem("disclaimerAccepted");
+
+        if (!accepted && popup) {
+            setTimeout(() => {
+                popup.style.display = "flex";
+            }, 1000); // 3 שניות
+        }
+    });
 
 }
 
@@ -264,24 +269,23 @@ async function send(tag) {
             }
             localStorage.setItem(`hos${hostage._id}`, JSON.stringify(objForSave))
         }
-        else
-            {
-                console.log('התרחשה שגיאה');
-                return
-            }
-        
+        else {
+            console.log('התרחשה שגיאה');
+            return
+        }
+
     }
     const response = await fetch(`${basicUrl}/api/documents/edit/${hostage._id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(hostage.tags)
-    }).catch(err=>{
-        console.log('error occured:',err);
+    }).catch(err => {
+        console.log('error occured:', err);
     })
     const data = await response.json();
     // console.log(data);
     localStorage.setItem('hos', JSON.stringify(data))
-    
+
 
 
     displayComments()
@@ -337,11 +341,11 @@ function checkdailyTask() {
 
         // document.getElementById("dailyTask").style.animation="glow 1s infinite;"
     }
-    else if (daily == today&&today!=null) {
+    else if (daily == today && today != null) {
         bell.classList.remove("glow-animation");
 
         // document.getElementById("bell").style.opacity = "0"
-        document.getElementById("dailyTask").innerHTML='השלמת את המשימה היומית'
+        document.getElementById("dailyTask").innerHTML = 'השלמת את המשימה היומית'
     }
 
 
