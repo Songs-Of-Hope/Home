@@ -60,24 +60,30 @@ body::before {
     left: 10px;}
 #bell {
     left: 200px!important;
-    font-size: 25px;
+    font-size: 30px;
     cursor: pointer;
     color: black;
     background-color: white;
     border-radius: 50%;
-    width: 30px;
-    padding: 5px 7px;}
+    width: 40px;
+    padding: 10px;}
 .glow-animation {
-    animation: glow 1s infinite alternate;}
+    animation: glow 0.5s infinite alternate;}
 @keyframes glow {
     from{
         box-shadow: 2px 2px 5px rgb(255, 223, 14);
+        scale: 1;
+        transform: rotate(-20deg); 
     }to{
         box-shadow: 2px 2px 50px rgb(255, 223, 14);
+        /* scale: 1.2; */
+        transform: rotate(20deg); 
+
     }}
     #dailyTask {
         position: relative;
-        left: 5vw;
+        left: 7vw;
+        top: 15px;
         display: none;
         background-color: #333;
         color: #fff;
@@ -644,3 +650,4 @@ textarea:focus {
   .taskCompleted[data-tooltip]:hover::after,
   .taskCompleted[data-tooltip]:hover::before {
     opacity: 1;}
+    

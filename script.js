@@ -143,14 +143,11 @@ function checkdailyTask() {
 let bell= document.getElementById('bell')
 
     if (daily == null || daily !== today) {
-        document.getElementById("bell").style.opacity = "1"
         bell.classList.add("glow-animation");
-        // document.getElementById("dailyTask").style.animation="glow 1s infinite;"
     }
     else if (daily == today&&today!=null) {
         bell.classList.remove("glow-animation");
-
-        // document.getElementById("bell").style.opacity = "0"
+        // bell.innerText='✔'
         document.getElementById("dailyTask").innerHTML='השלמת את המשימה היומית'
     }
     daily.setAttribute('data-tooltip', tooltipText);
