@@ -7,7 +7,8 @@
     <title>שירים של תקווה | שיר</title>
     <link rel="icon" type="image/jpg" href="./img/logo2.png" />
 </head>
-<div style="position: absolute;top:0;background-color: transparent;color: transparent;">פרוייקט הקדשות שירים לחטופים שלנו, שירים של תקווה, פרויקט אתר פרוג, שירה לשובם של החטופים קחו משימה יומית, משימה, מעשה טוב לחזרת החטופים</div>
+<div style="position: absolute;top:0;background-color: transparent;color: transparent;">פרוייקט הקדשות שירים לחטופים
+    שלנו, שירים של תקווה, פרויקט אתר פרוג, שירה לשובם של החטופים קחו משימה יומית, משימה, מעשה טוב לחזרת החטופים</div>
 
 <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="./style.css">
@@ -19,13 +20,14 @@
         <div class="header-content">
             <img src="./img/logo2.png" id="logo" height="90px" width="110px" alt=""
                 style="position: absolute;top: -15px;right: 20px;" onclick="closeModal()">
-                <div id="wrapBell"  onclick="dailyTask()">
-                    <div id="bell" dir="rtl" style="float: left;">🕭 </div>
-                    <div id="dailyTask">עוד לא לקחת את המשימה היומית!</div>
-                </div>
+            <div id="wrapBell" onclick="dailyTask()">
+                <div id="bell" dir="rtl" style="float: left;">🕭 </div>
+                <div id="dailyTask">עוד לא לקחת את המשימה היומית!</div>
+            </div>
             <h1 dir="rtl">איתכם בלב ושיר</h1>
             <h2 dir="rtl">
-                פרוייקט ייחודי של שירים שנכתבו מהלב ונוצרו בבינה מלאכותית המוקדשים לכל אחד ואחת מהחטופים, לעורר את המודעות ולחזק את תפילותינו לשובם במהרה.
+                פרוייקט ייחודי של שירים שנכתבו מהלב ונוצרו בבינה מלאכותית המוקדשים לכל אחד ואחת מהחטופים, לעורר את
+                המודעות ולחזק את תפילותינו לשובם במהרה.
 
             </h2>
             <h3 style="color: red;font-size: 25px;">האתר באמצע שדרוג- לכל באג/ רעיון נשמח שתפנו ל
@@ -34,7 +36,7 @@
                     היעודי בפרוג</a> והשאירו את תגובתכם
             </h3>
         </div>
-        
+
         <div class="navbar" dir="rtl">
             <a href="index.html">דף הבית</a>
             <a href="good.html">מעשים טובים</a>
@@ -48,7 +50,7 @@
         <div class="modal-content">
             <img id="modalImage" src="" alt="">
             <h1 id="modalTitle" dir="rtl"></h1>
-            <h1 id="nameForPray" dir="rtl" ></h1>
+            <h1 id="nameForPray" dir="rtl"></h1>
             <h2 id="description" dir="rtl"></h2>
             <!-- temppppp!! -->
             <span id="notExist" dir="rtl"></span>
@@ -61,27 +63,30 @@
                 <span class="comm" id="com2" onclick="send('😮')">😮</span>
                 <span class="comm" id="com3" onclick="send('🧡')">🧡</span>
                 <span class="comm" id="com4" onclick="send('💔')">💔</span>
+                <span class="comm" id="com5" onclick="send('👍')">👍</span>
             </div>
+
             <div id="legal-disclaimer-popup" class="disclaimer-popup" dir="rtl">
                 <div class="disclaimer-content">
-                  <h4 class="disclaimer-title">⚠️ מדיניות תגובות והבהרה משפטית</h4>
-                  <p>
-                    תגובות באתר נכתבות באחריות הגולשים בלבד, ואינן משקפות בהכרח את עמדת האתר או מנהליו.
-                    <br>
-                    בעל האתר שומר לעצמו את הזכות להסיר, לערוך או למחוק תגובות על פי שיקול דעתו וללא צורך בהסבר.
-                    <br>
-                    אין לפרסם תגובות פוגעניות, מסיתות, שקריות או כאלו המפרות זכויות יוצרים.
-                    <br>
-                    השימוש באתר ובתגובות נעשה באחריות המשתמש בלבד.
-                </p>
-                  <button class="disclaimer-button" onclick="closeDisclaimer()">הבנתי</button>
+                    <h4 class="disclaimer-title">⚠️ מדיניות תגובות והבהרה משפטית</h4>
+                    <p>
+                        תגובות באתר נכתבות באחריות הגולשים בלבד, ואינן משקפות בהכרח את עמדת האתר או מנהליו.
+                        <br>
+                        בעל האתר שומר לעצמו את הזכות להסיר, לערוך או למחוק תגובות על פי שיקול דעתו וללא צורך בהסבר.
+                        <br>
+                        אין לפרסם תגובות פוגעניות, מסיתות, שקריות או כאלו המפרות זכויות יוצרים.
+                        <br>
+                        השימוש באתר ובתגובות נעשה באחריות המשתמש בלבד.
+                    </p>
+                    <button class="disclaimer-button" onclick="closeDisclaimer()">הבנתי</button>
                 </div>
-              </div>
+            </div>
             <br>
             <!-- <a id="downloadBtn" href="#" download>
                 <button class="btn" dir="rtl">הורד כעת <i class="fas fa-download"></i>
                 </button>
             </a> -->
+            <p id="likedArea" dir="rtl" style="font-size: 25px;position: absolute;top: 250px;left: 10px;"></p>
             <div id="rights" dir="rtl" style="float: right;"></div>
             <p id="modalText"></p>
 
@@ -105,7 +110,6 @@
                 </button> -->
             </div>
         </div>
-        <p id="likedArea" dir="rtl" style="font-size: 25px;margin-top: -80px;"></p>
         <div id="alert"></div>
 
     </div>
@@ -115,7 +119,7 @@
             <p dir="rtl">© 2025 שירים לחטופים-שע"י הקהילה prog.co.il</p>
             <p dir="rtl">אנחנו לא שוכחים אתכם לרגע❤️</p>
             <p dir="rtl">ליצירת קשר:
-                <a href="mailto:songsforthem2025@gmail.com" class="footer-link">songsforthem2025@gmail.com</a> 
+                <a href="mailto:songsforthem2025@gmail.com" class="footer-link">songsforthem2025@gmail.com</a>
                 <!-- | -->
                 <!-- <a href="tel:0552222222" class="footer-link">055-2222222</a> |
                 <a href="https://wa.me/0552222222" target="_blank" class="footer-link">WhatsApp</a> -->
@@ -124,7 +128,7 @@
     </footer>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.5/dist/purify.min.js"></script>
-  <!-- <script src="./script.js"></script> -->
-  <script src="./details.js"></script>
+<!-- <script src="./script.js"></script> -->
+<script src="./details.js"></script>
 
 </html>

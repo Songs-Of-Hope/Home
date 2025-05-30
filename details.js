@@ -21,7 +21,7 @@ function openDetails() {
     text = hostage.lyrics.replace(/__OPEN__/g, '[').replace(/__CLOSE__/g, ']');
     document.getElementById("modalImage").src = hostage.imageLink
     document.getElementById('modalTitle').innerText = hostage.hostageName;
-    document.getElementById('likedArea').innerHTML += `<div><i class="fas fa-thumbs-up"  id="liked" onclick="likeOrDis(${hostage._id})"></i></div><div id="count">${hostage.likesCount} אנשים אהבו</div>`;
+    // document.getElementById('likedArea').innerHTML += `<div><i class="fas fa-thumbs-up"  id="liked" onclick="likeOrDis(${hostage._id})"></i></div><div id="count">${hostage.likesCount} אנשים אהבו</div>`;
     if (hostage.nameForPray)
         if (hostage.returned2 === false || hostage.returned2 == true)
             document.getElementById('nameForPray').innerHTML += `~"התפללו לשובם : ${hostage.nameForPray}"~`
@@ -302,7 +302,7 @@ function displayComments() {
     let com4 = document.getElementById('com4');
     // commentsElement.innerHTML = ''
     let comments = hostage.tags
-    let current_comments=[0,0,0,0]
+    let current_comments=[0,0,0,0,0]
     comments.forEach((comment) => {
         if(comment=='😶')
             current_comments[0]++
@@ -312,11 +312,15 @@ function displayComments() {
             current_comments[2]++
         if(comment=='💔')
             current_comments[3]++
+        if(comment=='👍')
+            current_comments[4]++
+
 })
         com1.innerHTML=`😶<span> +${current_comments[0]}</span>`
         com2.innerHTML=`😮<span> +${current_comments[1]}</span>`
         com3.innerHTML=`🧡<span> +${current_comments[2]}</span>`
         com4.innerHTML=`💔<span> +${current_comments[3]}</span>`
+        com5.innerHTML=`👍<span> +${current_comments[4]}</span>`
 
 }
 
