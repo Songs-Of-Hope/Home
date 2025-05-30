@@ -14,7 +14,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 <body>
-
     <!-- <a href="./index.html">Home</a> -->
     <header class="main-header">
         <div class="header-content">
@@ -49,7 +48,7 @@
         <div class="modal-content">
             <img id="modalImage" src="" alt="">
             <h1 id="modalTitle" dir="rtl"></h1>
-            <h2 id="nameForPray" dir="rtl"></h2>
+            <h1 id="nameForPray" dir="rtl" ></h1>
             <h2 id="description" dir="rtl"></h2>
             <!-- temppppp!! -->
             <span id="notExist" dir="rtl"></span>
@@ -58,10 +57,10 @@
             <div id="commentsContainer" dir="rtl">
                 <!-- <h2>תגובות </h2> -->
                 <span id="res">הגב על השיר</span>
-                <span class="comm" onclick="send('😶')">😶</span>
-                <span class="comm" onclick="send('😮')">😮</span>
-                <span class="comm" onclick="send('🧡')">🧡</span>
-                <span class="comm" onclick="send('💔')">💔</span>
+                <span class="comm" id="com1" onclick="send('😶')">😶</span>
+                <span class="comm" id="com2" onclick="send('😮')">😮</span>
+                <span class="comm" id="com3" onclick="send('🧡')">🧡</span>
+                <span class="comm" id="com4" onclick="send('💔')">💔</span>
             </div>
             <div id="legal-disclaimer-popup" class="disclaimer-popup" dir="rtl">
                 <div class="disclaimer-content">
@@ -83,6 +82,7 @@
                 <button class="btn" dir="rtl">הורד כעת <i class="fas fa-download"></i>
                 </button>
             </a> -->
+            <div id="rights" dir="rtl" style="float: right;"></div>
             <p id="modalText"></p>
 
             <div dir="rtl" id="wrap">

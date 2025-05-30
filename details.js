@@ -24,9 +24,9 @@ function openDetails() {
     document.getElementById('likedArea').innerHTML += `<div><i class="fas fa-thumbs-up"  id="liked" onclick="likeOrDis(${hostage._id})"></i></div><div id="count">${hostage.likesCount} אנשים אהבו</div>`;
     if (hostage.nameForPray)
         if (hostage.returned2 === false || hostage.returned2 == true)
-            document.getElementById('nameForPray').innerHTML += `"התפללו לשובם של: ${hostage.nameForPray}"`
+            document.getElementById('nameForPray').innerHTML += `~"התפללו לשובם : ${hostage.nameForPray}"~`
         else
-            document.getElementById('nameForPray').innerHTML += `התפללו לשובו של: "${hostage.nameForPray}"`
+            document.getElementById('nameForPray').innerHTML += `~התפללו לשובו : "${hostage.nameForPray}"~`
 
     document.getElementById('description').innerText = hostage.description;
     document.getElementById("mailto").href = `mailto:?subject=הי, רציתי לשתף אותך באתר שגיליתי- הקדשת שיר לכל חטוף?body=${encodeURIComponent('אתר להעלאת המודעות לחטופים ע"י כתיבת שירים וביצועם \n https://songs-of-hope.github.io/Home/ \n האתר כולו נבנה ע"י קהילת prog.co.il , כולל כתיבת השירים וביצועם ')}`
@@ -71,6 +71,8 @@ function openDetails() {
         }
 
     }
+    let rights= document.getElementById('rights')
+    rights.innerHTML=`<span style="font-size:20px;color:rgb(255, 223, 14)">כתיבה</span>: @${hostage.words}.  <span style="font-size:20px;color:rgb(255, 223, 14)"> ביצוע שיר:</span> @${hostage.song}.`
     if (hostage.audioLink === '***') {
         document.getElementById('modalAudio').style.opacity = '0';
         document.getElementById('notExist').innerHTML = 'השיר לא נוצר עדיין בmp3. אולי את/ה תתנדב/י ליצור אותו?'
@@ -294,23 +296,61 @@ async function send(tag) {
 
 }
 function displayComments() {
-    const commentsElement = document.getElementById('comments');
-    commentsElement.innerHTML = ''
+    let com1 = document.getElementById('com1');
+    let com2 = document.getElementById('com2');
+    let com3 = document.getElementById('com3');
+    let com4 = document.getElementById('com4');
+    // commentsElement.innerHTML = ''
     let comments = hostage.tags
+    let current_comments=[0,0,0,0]
+    comments.forEach((comment) => {
+        if(comment=='😶')
+            current_comments[0]++
+        if(comment=='😮')
+            current_comments[1]++
+        if(comment=='🧡')
+            current_comments[2]++
+        if(comment=='💔')
+            current_comments[3]++
+})
+        com1.innerHTML=`😶<span> +${current_comments[0]}</span>`
+        com2.innerHTML=`😮<span> +${current_comments[1]}</span>`
+        com3.innerHTML=`🧡<span> +${current_comments[2]}</span>`
+        com4.innerHTML=`💔<span> +${current_comments[3]}</span>`
 
-    comments.forEach((comment, index) => {
-        if (index < 5) {
-            const commentElement = document.createElement('span');
-            commentElement.dir = 'rtl'
-            commentElement.className = 'comment'
-            commentElement.innerHTML = comment;
-            commentsElement.appendChild(commentElement);
-        }
-    })
-    if (comments.length > 5)
-        commentsElement.innerHTML += `<span class="loadMore">+ ${comments.length - 5}</span>`
-    // comments.innerHTML = '';
 }
+
+    // comments.forEach((comment, index) => {
+    //     if (index < 5) {
+    //         const commentElement = document.createElement('span');
+    //         commentElement.dir = 'rtl'
+    //         commentElement.className = 'comment'
+    //         commentElement.innerHTML = comment;
+    //         commentsElement.appendChild(commentElement);
+    //     }
+    // })
+    // if (comments.length > 5)
+    //     commentsElement.innerHTML += `<span class="loadMore">+ ${comments.length - 5}</span>`
+    // comments.innerHTML = '';
+
+// function displayComments() {
+//     const commentsElement = document.getElementById('comments');
+//     commentsElement.innerHTML = ''
+//     let comments = hostage.tags
+
+//     comments.forEach((comment, index) => {
+//         if (index < 5) {
+//             const commentElement = document.createElement('span');
+//             commentElement.dir = 'rtl'
+//             commentElement.className = 'comment'
+//             commentElement.innerHTML = comment;
+//             commentsElement.appendChild(commentElement);
+//         }
+//     })
+//     if (comments.length > 5)
+//         commentsElement.innerHTML += `<span class="loadMore">+ ${comments.length - 5}</span>`
+//     // comments.innerHTML = '';
+// }
 function showNotification(message) {
 
     const container = document.getElementById("alert");
@@ -347,8 +387,6 @@ function checkdailyTask() {
         // document.getElementById("bell").style.opacity = "0"
         document.getElementById("dailyTask").innerHTML = 'השלמת את המשימה היומית'
     }
-
-
 
 }
 checkdailyTask()
