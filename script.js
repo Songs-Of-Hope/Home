@@ -4,15 +4,35 @@ let hostagesNow = []
 let died = []
 let returned = []
 
-// const basicUrl = "http://localhost:3000";
+const basicLocalUrl = "http://localhost:3000";
 const basicUrl = "https://hostagesserver.onrender.com";
 
 currentHos = null
 // let likesCount = getLikesCount()
 window.onload = () => {
     getHostages()
+     if (!sessionStorage.getItem('viewCounted')) {
+      addView(); 
+    //   sessionStorage.setItem('viewCounted', 'true');
+    }
     console.log('loaded');
 }
+async function addView() {
+    try {
+        const response = await fetch(`${basicLocalUrl}/api/views/addView`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+
+        const data = await response.json();
+        console.log('View added:', data);
+    } catch (error) {
+        console.error('Error adding view:', error);
+    }
+}
+
 async function getHostages() {
     try {
         let container = document.getElementById("hostages-container");
@@ -139,16 +159,16 @@ function checkdailyTask() {
     const today = new Date().toISOString().split('T')[0];
 
 
-  
-let bell= document.getElementById('bell')
+
+    let bell = document.getElementById('bell')
 
     if (daily == null || daily !== today) {
         bell.classList.add("glow-animation");
     }
-    else if (daily == today&&today!=null) {
+    else if (daily == today && today != null) {
         bell.classList.remove("glow-animation");
         // bell.innerText='✔'
-        document.getElementById("dailyTask").innerHTML='השלמת את המשימה היומית'
+        document.getElementById("dailyTask").innerHTML = 'השלמת את המשימה היומית'
     }
     daily.setAttribute('data-tooltip', tooltipText);
 
